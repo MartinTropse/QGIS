@@ -1,3 +1,5 @@
+Lili
+
 QGIS:
 -Ta ner data storleken och kör sedan data mot C: på bägge datorerna.
 -Selektera naturreservat lagret / SPA|SCI / Nationalparker mot HaVs 
