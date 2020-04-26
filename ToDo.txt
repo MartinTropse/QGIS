@@ -1,4 +1,5 @@
 Lili
+Martins
 
 QGIS:
 -Ta ner data storleken och kör sedan data mot C: på bägge datorerna.
