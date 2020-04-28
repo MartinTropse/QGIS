@@ -1,7 +1,0 @@
-Problem Hav Kartering:
-CombProt lagret har troligen problem också, kan möjligtvis vara att blekinge lagret ligger bakom. 
-
-Det går inte jämföra de 4 skyddsområdena "symphony summa" med total symphony summan från området, 
-då de 4 överlappar med varandra. 
-
-Således måste alla skyddsområden köras med ett lager... 
