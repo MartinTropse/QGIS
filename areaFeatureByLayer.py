@@ -3,7 +3,7 @@
 
 import pandas as pd
 
-mc=iface.mapCanvas() 
+mc=iface.mapCanvas() #iface works automatically from console, otherwise requires import: from qgis.utils import iface
 layers=mc.layers() #Adds all layers that are currently checked in the TOC
 
 nameList = []
