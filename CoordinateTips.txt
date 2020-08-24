@@ -1,0 +1,7 @@
+QGIS does projection on the fly. To change these settings go to "options" and then "CRS". 
+Set "CRS for Layers" to "Use Project CRS" and "CRS for Projects" to "Use CRS from first layer added".
+
+If you then add a SWEREF99 background map and then add the WGS84 layer, it will automatically be projected to the right location. 
+The CRS will however remain WGS84, and changing the CRS within QGIS will cause the points to change location. 
+
+Therefor you need to export the layer and then set the prefered CRS after QGIS have correclty projected the data "on the fly"

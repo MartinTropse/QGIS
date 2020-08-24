@@ -1,10 +1,8 @@
-#QGIS Notes
+####QGIS Notes###
 
 
 #PyQGIS Developer Cookbook:
 #https://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/
-
-
 
 #Notes Udemy Automating QGIS:
 #iface: Stands for interface and is a “hook”. This creates a connection between the Python Console and the open QGIS interface. 
@@ -15,12 +13,12 @@ Is an object that allows interactions with layers and the map, such as mc.layers
 lyr = mc.currentLayer()# returns the current layer. 
 lyrs = mc.layers() # returns a list of all layers that are currently “clicked/shown” in the interface.
 
-QgsProject
+###QgsProject###
 lyrs = QgsProject.instance().mapLayersByName(‘Country’) #access a layer within  
 #Creates a list since a name can refere to more than on layer
 lyr = lyrs[0] #Will return the layer in question.
 
-Layer
+###Layer###
 lyr.isValid() #  
 lyr.sourceName() #Returns the name of the layer, only works for vector layers
 
@@ -53,7 +51,7 @@ QgsProject.instance().removeMapLayer(dissLayer)
 ###renderer###
 symbol = renderer.symbol()
 #This object only allows change of a few properties 
-<qgis._core.QgsMarkerSymbol object at 0x000002425F254288>
+#<qgis._core.QgsMarkerSymbol object at 0x000002425F254288>
 
 symbol.setSize(4) #Change the size of the MarkerSymbol 
 lyr.triggerRepaint() # Cause the change to be vizualised within the map
@@ -61,19 +59,19 @@ ltv = iface.layerTreeView() #Allows for interactions and update of the treeview
 ltv.refreshLayerSymbology(lyr.id()) 
 
 symlyr1 = symbol.symbolLayers()[0]  #Allows for manipulation of more properties
-symlyr1
-<qgis._core.QgsSimpleMarkerSymbolLayer object at 0x000002425F254438>
+#symlyr1
+#<qgis._core.QgsSimpleMarkerSymbolLayer object at 0x000002425F254438>
 
 symlyr1.properties()
 {'angle': '0', 'color': '196,60,57,255', 'horizontal_anchor_point': '1', 'joinstyle': 'bevel', 'name': 'circle', 'offset': '0,0', 'offset_map_unit_scale': '3x:0,0,0,0,0,0', 'offset_unit': 'MM', 'outline_color': '35,35,35,255', 'outline_style': 'solid', 'outline_width': '0', 'outline_width_map_unit_scale': '3x:0,0,0,0,0,0', 'outline_width_unit': 'MM', 'scale_method': 'diameter', 'size': '4', 'size_map_unit_scale': '3x:0,0,0,0,0,0', 'size_unit': 'MM', 'vertical_anchor_point': '1'}
 
-symlyr1
-<qgis._core.QgsSimpleMarkerSymbolLayer object at 0x000002425F254438>
+#symlyr1
+#<qgis._core.QgsSimpleMarkerSymbolLayer object at 0x000002425F254438>
 symlyr1.setColor(QColor('red'))
 lyr.triggerRepaint()
 symnew = QgsMarkerSymbol.createSimple({'name':'square', 'color':'blue'})
-symnew
-<qgis._core.QgsMarkerSymbol object at 0x000002425F2540D8>
+#symnew
+#<qgis._core.QgsMarkerSymbol object at 0x000002425F2540D8>
 ltv.refreshLayerSymbology(lyr.id())
 
 
@@ -100,27 +98,8 @@ else:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ####List of common tools to apply in processing run or run and load###
-"native:dissolve", {'INPUT':f'E:/GIS/Data/Raster/ScriptOutdir/Vektor/ClipRegionByProt/{lyrName}.shp','FIELD':[],'OUTPUT':'TEMPORARY_OUTPUT'} 
 
-param={ 'ALPHA_BAND' : False, 'CROP_TO_CUTLINE' : False, 'DATA_TYPE' : 0, 'EXTRA' : '',\         'INPUT' : f'E:/GIS/Data/Raster/Symphony/AnalysFold/250m/SymphonyByRegion/{regionName}.tif', 'KEEP_RESOLUTION' : False,\'MASK' : f'E:/GIS/Data/Raster/ScriptOutdir/Vektor/ProtMaskNollBf/{prct}.shp', 'MULTITHREADING' : False,\
-           'NODATA' : None, 'OPTIONS' : 'COMPRESS=PACKBITS', 'OUTPUT' : f'E:/GIS/Data/Raster/Symphony/AnalysFold/250m/SymphonyRegionProt/{regionName}__{prct}.tif', \
-           'SET_RESOLUTION' : False, 'SOURCE_CRS' : None, 'TARGET_CRS' : None, 'X_RESOLUTION' : None, 'Y_RESOLUTION' : None }
-        processing.run("gdal:cliprasterbymasklayer", param)
 
 
 
